@@ -11,6 +11,17 @@ const SingleColor = ({rgb, weight, index, hexColor}) => {
 
   // construct a string
   const hexValue = `#${hexColor}`
+
+  // time out to clear the value once the alert changes
+  useEffect(() => {
+    // clean up function
+    const timeout = setTimeout(() => {
+      setAlert(false);
+    }, 3000)
+    return () => clearTimeout(timeout)
+  }, [alert])
+
+
   return(
     <>
     {/* for color if the index is greater than 10 ADD one more class which is color-light */}
