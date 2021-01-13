@@ -10,7 +10,16 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Thank you Lord Jesus');
+    // console.log('Thank you Lord Jesus');
+
+    try {
+      let colors = new Values(color).all(10);
+      console.log(colors);
+    } catch (error) {
+      setError(true);
+      console.log(error);
+    }
+
   }
 
   return (
