@@ -14,7 +14,8 @@ function App() {
 
     try {
       let colors = new Values(color).all(10);
-      console.log(colors);
+      setList(colors);
+
     } catch (error) {
       setError(true);
       console.log(error);
@@ -39,7 +40,11 @@ function App() {
       </section>
 
       <section className ="colors">
-        <h4>Literating list</h4>
+        {/* iterate over the list array of color */}
+        {list.map((color, index) => {
+          console.log(color);
+          return <SingleColor key ={index} {...color} index ={index} />
+        })}
       </section>
     </>
   );
