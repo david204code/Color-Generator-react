@@ -9,6 +9,8 @@ const SingleColor = ({rgb, weight, index, hexColor}) => {
   // console.log(bcg);
   const hex = rgbToHex(...rgb);
 
+  // construct a string
+  const hexValue = `#${hexColor}`
   return(
     <>
     {/* for color if the index is greater than 10 ADD one more class which is color-light */}
@@ -20,7 +22,7 @@ const SingleColor = ({rgb, weight, index, hexColor}) => {
           {hex}
         </p>
         <p className ="color-value">
-          #{hexColor}
+          {hexValue}
         </p>
       </article>
     </>
