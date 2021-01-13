@@ -14,7 +14,15 @@ const SingleColor = ({rgb, weight, index, hexColor}) => {
   return(
     <>
     {/* for color if the index is greater than 10 ADD one more class which is color-light */}
-      <article className ={`color ${index > 10 && 'color-light'}`} style ={{backgroundColor: `rgb(${bcg})`}}>
+      <article 
+        className ={`color ${index > 10 && 'color-light'}`} 
+        style ={{backgroundColor: `rgb(${bcg})`}}
+        onClick ={() => {
+          setAlert(true);
+          // copy the event to the clipboard
+          navigator.clipboard.writeText(hexValue);
+        }}
+      >
         <p className ="percent-value">
           {weight}%  
         </p> 
@@ -24,6 +32,8 @@ const SingleColor = ({rgb, weight, index, hexColor}) => {
         <p className ="color-value">
           {hexValue}
         </p>
+        {/* if alert is true than display <p></p>*/}
+        {alert && <p className ="alert">copied to clipboard</p>}
       </article>
     </>
   ); 
