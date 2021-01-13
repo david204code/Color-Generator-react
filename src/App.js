@@ -43,7 +43,7 @@ function App() {
         {/* iterate over the list array of color */}
         {list.map((color, index) => {
           console.log(color);
-          return <SingleColor key ={index} {...color} index ={index} />
+          return <SingleColor key ={index} {...color} index ={index} hexColor ={color.hex}/>
         })}
       </section>
     </>
